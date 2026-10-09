@@ -14,7 +14,7 @@ provider "aws" {
 
 variable "region" {
   type    = string
-  default = "eu-west-2"
+  default = "us-east-2"
 }
 
 variable "github_org" {

@@ -1,7 +1,7 @@
 # Copy to terraform.tfvars after running bootstrap/ and fill in its outputs.
 common_variables = {
-  AWS_ROLE_ARN        = "arn:aws:iam::ACCOUNT_ID:role/github-actions-deployer"
-  AWS_REGION          = "eu-west-2"
-  GLUE_SCRIPTS_BUCKET = "kasidandu-glue-scripts-ACCOUNT_ID"
-  LAMBDA_BUCKET       = "kasidandu-lambda-artifacts-ACCOUNT_ID"
+  AWS_ROLE_ARN        = "arn:aws:iam::870276621986:role/github-actions-deployer"
+  AWS_REGION          = "us-east-2"
+  GLUE_SCRIPTS_BUCKET = "kasidandu-glue-scripts-870276621986"
+  LAMBDA_BUCKET       = "kasidandu-lambda-artifacts-870276621986"
 }

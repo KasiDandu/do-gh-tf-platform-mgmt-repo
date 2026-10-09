@@ -7,9 +7,9 @@ terraform {
     }
   }
   backend "s3" {
-    bucket       = "kasidandu-tf-state-ACCOUNT_ID" # TODO: replace ACCOUNT_ID after bootstrap
+    bucket       = "kasidandu-tf-state-870276621986"
     key          = "github/platform-mgmt.tfstate"
-    region       = "eu-west-2"
+    region       = "us-east-2"
     use_lockfile = true
   }
 }
