@@ -1,0 +1,37 @@
+# Single source of truth for every repo managed by this platform repo.
+# Supported keys: description, visibility, is_template, template_name, topics,
+#                 teams (organisations only), variables, actions_access (private repos only)
+repos:
+  do-gh-shared-actions:
+    description: Central reusable GitHub Actions workflow library
+    topics: [platform, shared-actions]
+    teams: { platform-team: admin, data-engineers: pull }
+
+  do-aws-tf-process-pipeline-bp:
+    description: Terraform blueprint module for process-type pipelines
+    topics: [platform, blueprint]
+    teams: { platform-team: admin, data-engineers: pull }
+
+  do-aws-pipeline-infra:
+    description: Infrastructure as Code config (CD only)
+    topics: [platform, infra]
+    teams: { platform-team: admin, data-engineers: pull }
+
+  do-gh-data-repo-template:
+    description: Scaffold for every data pipeline repo
+    is_template: true
+    topics: [platform, template]
+    teams: { platform-team: admin, data-engineers: pull }
+
+  do-aws-lakehouse-process-storage-ppi-triage:
+    description: PPI triage process-storage pipeline (bronze to silver)
+    template_name: do-gh-data-repo-template
+    topics: [ppi-triage, data-pipeline, process-storage]
+    teams: { data-engineers: push, platform-team: admin }
+    variables:
+      DATA_PIPELINE: ppi-triage
+      BLUEPRINT_TYPE: process
+      # These were created as "false" so nothing deploys before AWS exists.
+      # The first terraform apply after bootstrap switches them on.
+      ENABLE_GLUE: "true"
+      ENABLE_LAMBDA: "true"

@@ -1,0 +1,8 @@
+# Used only when manage_teams = true (GitHub organisations).
+teams:
+  platform-team:
+    description: Owns platform, shared actions, blueprints and infra
+    maintainers: [KasiDandu]
+  data-engineers:
+    description: Builds data pipelines
+    maintainers: [KasiDandu]
